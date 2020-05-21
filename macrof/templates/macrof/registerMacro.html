@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <h2>메크로 돌아가는 페이지</h2>
+        <style>
+            section {float:left; }
+            div { margin-bottom:10px; }
+            input { margin-bottom:10px; padding:2px; }
+            #id { width: 200px; height: 30px; }
+            #pw { width: 200px; height: 30px; }
+            #title_1 { width: 500px; height: 30px; }
+            #product { width: 500px; height: 30px; }
+            #price { width: 200px; height: 30px; }
+            #product_information { width: 500px; height: 50px; }
+            #contents { width: 500px; height: 100px; }
+            #review { width: 500px; height: 200px; }
+            #link { width: 500px; height: 30px; }
+            textarea { margin-bottom:10px; padding:2px; }
+        </style>
+    </head>
+    <body>
+    <section>
+        <div>b_id / b_pw</div>
+        <textarea cols="30" id="b_id" placeholder="아이디"></textarea> <textarea cols="30" id="b_pw" placeholder="비밀번호"></textarea>
+
+        <div>title</div>
+        <textarea cols="70" id="title_1" placeholder="제목">{{ macro_data.title }}</textarea>
+
+        <div>product</div>
+        <textarea cols="70" id="product" placeholder="상품명">{{ macro_data.product }}</textarea>
+
+        <div>price</div>
+        <textarea cols="70" id="price" placeholder="상품가격">{{ macro_data.price }}</textarea>
+        
+        <div>product_information</div>
+        <textarea cols="70" id="product_information" placeholder="상품정보">{{ macro_data.product_i }}</textarea>
+        
+        <div>contents</div>
+        <textarea cols="70" id="contents" placeholder="본문내용">{{ macro_data.contents }}</textarea>
+
+        <div>review</div>
+        <textarea cols="70" id="review" placeholder="상품평">{{ macro_data.review }}</textarea>
+
+        <div>link</div>
+        <textarea cols="70" id="link" placeholder="쿠팡링크">{{ macro_data.link }}</textarea>
+    </section>
+    <div>
+        <div>이미지1</div>
+        <div>이미지2</div>
+        <div>이미지3</div>
+    </div>
+    <a href="/macro_pjt/cmacro?pk={{ macro_data.pk | add:1 }}">Next</a>
+    </body>
+</html>
